@@ -69,7 +69,7 @@
 #define FRAC_HIGH 30
 #define FRAC_LOW 15
 #define TS_COEF 6 			//12 for Kclamber Sensor 1200 for T15 BB sensor
-#define RIDEMODE_PAS   //RIDEMODE RIDEMODE_KCLAMBER_KASSETTE_SENSOR
+#define RIDEMODE RIDEMODE_PAS   //RIDEMODE RIDEMODE_KCLAMBER_KASSETTE_SENSOR
 //#define TQONAD1
 
 //------------------------------Throttle settings
