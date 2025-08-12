@@ -82,7 +82,7 @@
 #define GEAR_RATIO 105 //dummy for testing
 #define SPEEDLIMIT 25
 #define PULSES_PER_REVOLUTION 1
-#define REVERSE -1
+#define REVERSE 1  //-1
 #define SPEEDFILTER 1
 #define SPEEDSOURCE INTERNAL
 
