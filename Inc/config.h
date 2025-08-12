@@ -96,14 +96,14 @@
 #define REGEN_CURRENT 0
 #define REGEN_CURRENT_MAX 10000
 #define PUSHASSIST_CURRENT 30
-#define VOLTAGE_MIN 1200
+#define VOLTAGE_MIN 1320 //33V       1200
 
 //----------------------------- Display setting
 
-#define DISPLAY_TYPE DISPLAY_TYPE_DEBUG
+#define DISPLAY_TYPE DISPLAY_TYPE_KINGMETER_901U
 
 //------------------------------Autodetect setting
-#define AUTODETECT 1
+#define AUTODETECT 0
 
 
 
