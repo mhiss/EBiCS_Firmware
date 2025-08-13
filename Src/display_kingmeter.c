@@ -409,14 +409,14 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			            		//HAL_UART_Transmit(&huart3, (uint8_t *)&KM_Message, Rx_message_length,50);
     			                // Decode Rx message
 
-//    			                KM_ctx->Rx.AssistLevel        =  KM_Message[4];                 // 0..255
-//    			                KM_ctx->Rx.Headlight          = (KM_Message[5] & 0xC0) >> 6;    // KM_HEADLIGHT_OFF / KM_HEADLIGHT_ON / KM_HEADLIGHT_LOW / KM_HEADLIGHT_HIGH
-//    			                KM_ctx->Rx.Battery            = (KM_Message[5] & 0x20) >> 5;    // KM_BATTERY_NORMAL / KM_BATTERY_LOW
-//    			                KM_ctx->Rx.PushAssist         = (KM_Message[5] & 0x10) >> 4;    // KM_PUSHASSIST_OFF / KM_PUSHASSIST_ON
-//    			                KM_ctx->Rx.PowerAssist        = (KM_Message[5] & 0x08) >> 3;    // KM_POWERASSIST_OFF / KM_POWERASSIST_ON
-//    			                KM_ctx->Rx.Throttle           = (KM_Message[5] & 0x04) >> 2;    // KM_THROTTLE_OFF / KM_THROTTLE_ON
-//    			                KM_ctx->Rx.CruiseControl      = (KM_Message[5] & 0x02) >> 1;    // KM_CRUISE_OFF / KM_CRUISE_ON
-//    			                KM_ctx->Rx.OverSpeed          = (KM_Message[5] & 0x01);         // KM_OVERSPEED_NO / KM_OVERSPEED_YES
+    			                KM_ctx->Rx.AssistLevel        =  KM_Message[4];                 // 0..255
+    			                KM_ctx->Rx.Headlight          = (KM_Message[5] & 0xC0) >> 6;    // KM_HEADLIGHT_OFF / KM_HEADLIGHT_ON / KM_HEADLIGHT_LOW / KM_HEADLIGHT_HIGH
+    			                KM_ctx->Rx.Battery            = (KM_Message[5] & 0x20) >> 5;    // KM_BATTERY_NORMAL / KM_BATTERY_LOW
+    			                KM_ctx->Rx.PushAssist         = (KM_Message[5] & 0x10) >> 4;    // KM_PUSHASSIST_OFF / KM_PUSHASSIST_ON
+    			                KM_ctx->Rx.PowerAssist        = (KM_Message[5] & 0x08) >> 3;    // KM_POWERASSIST_OFF / KM_POWERASSIST_ON
+    			                KM_ctx->Rx.Throttle           = (KM_Message[5] & 0x04) >> 2;    // KM_THROTTLE_OFF / KM_THROTTLE_ON
+    			                KM_ctx->Rx.CruiseControl      = (KM_Message[5] & 0x02) >> 1;    // KM_CRUISE_OFF / KM_CRUISE_ON
+    			                KM_ctx->Rx.OverSpeed          = (KM_Message[5] & 0x01);         // KM_OVERSPEED_NO / KM_OVERSPEED_YES
 
    			            		}
     			            	else {// printf_("Checksum fail! \n ");
@@ -425,7 +425,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
 
     			            	}
 
-    			            	kingmeter_update();
+//    			            	kingmeter_update();
     			                // Prepare Tx message
     			                TxBuffer[0]  = 0x3A;                                      // StartCode
     			                TxBuffer[1]  = 0x1A;                                      // SrcAdd:  Controller
@@ -457,21 +457,21 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			            	if(!CheckSum) //low-byte and high-byte
     			            		{
 
-// 			                    KM_ctx->Settings.PAS_RUN_Direction   = (KM_Message[4] & 0x80) >> 7; // KM_PASDIR_FORWARD / KM_PASDIR_BACKWARD
-//    			                KM_ctx->Settings.ExecAutodetect   	 = (KM_Message[6]>>7)&0x01; 	// Execute Autodetect (with P18 of EN06 protocol)
-//    			                KM_ctx->Settings.Reverse   	 		 = (KM_Message[6]>>6)&0x01; 	// set spinning direction (with P19 of EN06 protocol)
-//    			                KM_ctx->Settings.PAS_SCN_Tolerance   =  KM_Message[5];              // 2..9
-//    			                KM_ctx->Settings.PAS_N_Ratio         =  KM_Message[6];              // 0..255
-//    			                KM_ctx->Settings.HND_HL_ThrParam     = (KM_Message[7] & 0x80) >> 7; // KM_HND_HL_NO / KM_HND_HL_YES
-//    			                KM_ctx->Settings.HND_HF_ThrParam     = (KM_Message[7] & 0x40) >> 6; // KM_HND_HF_NO / KM_HND_HF_YES
-//    			                KM_ctx->Settings.SYS_SSP_SlowStart   =  KM_Message[8];              // 1..9
-//    			                KM_ctx->Settings.SPS_SpdMagnets      =  KM_Message[9];             // 1..4
-//    			                KM_ctx->Settings.VOL_1_UnderVolt_x10 = (((uint16_t) KM_Message[11])<<8) | KM_Message[11];
-//    			                KM_ctx->Settings.WheelSize_mm        = (((uint16_t) KM_Message[12])<<8) | KM_Message[13];
-//    			    	        KM_ctx->Rx.SPEEDMAX_Limit          		= KM_Message[11];
-//    			    	        KM_ctx->Rx.CUR_Limit_mA                 = (KM_Message[8]&0x3F)*500;
+ 			                    KM_ctx->Settings.PAS_RUN_Direction   = (KM_Message[4] & 0x80) >> 7; // KM_PASDIR_FORWARD / KM_PASDIR_BACKWARD
+    			                KM_ctx->Settings.ExecAutodetect   	 = (KM_Message[6]>>7)&0x01; 	// Execute Autodetect (with P18 of EN06 protocol)
+    			                KM_ctx->Settings.Reverse   	 		 = (KM_Message[6]>>6)&0x01; 	// set spinning direction (with P19 of EN06 protocol)
+    			                KM_ctx->Settings.PAS_SCN_Tolerance   =  KM_Message[5];              // 2..9
+    			                KM_ctx->Settings.PAS_N_Ratio         =  KM_Message[6];              // 0..255
+    			                KM_ctx->Settings.HND_HL_ThrParam     = (KM_Message[7] & 0x80) >> 7; // KM_HND_HL_NO / KM_HND_HL_YES
+    			                KM_ctx->Settings.HND_HF_ThrParam     = (KM_Message[7] & 0x40) >> 6; // KM_HND_HF_NO / KM_HND_HF_YES
+    			                KM_ctx->Settings.SYS_SSP_SlowStart   =  KM_Message[8];              // 1..9
+    			                KM_ctx->Settings.SPS_SpdMagnets      =  KM_Message[9];             // 1..4
+    			                KM_ctx->Settings.VOL_1_UnderVolt_x10 = (((uint16_t) KM_Message[11])<<8) | KM_Message[11];
+    			                KM_ctx->Settings.WheelSize_mm        = (((uint16_t) KM_Message[12])<<8) | KM_Message[13];
+    			    	        KM_ctx->Rx.SPEEDMAX_Limit          		= KM_Message[11];
+    			    	        KM_ctx->Rx.CUR_Limit_mA                 = (KM_Message[8]&0x3F)*500;
 
-    			    	        kingmeter_update();
+//    			    	        kingmeter_update();
 //    			    	        if(KM_ctx->Settings.ExecAutodetect&&!FirstRunFlag){
 //    			    	        	autodetect();
 //    			    	        	FirstRunFlag=1;
