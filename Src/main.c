@@ -1978,16 +1978,16 @@ void kingmeter_update(void)
 
     /* Apply Rx parameters */
 
-    MS.assist_level = KM.Rx.AssistLevel;
+//    MS.assist_level = KM.Rx.AssistLevel;
 
     if(KM.Rx.Headlight == KM_HEADLIGHT_OFF)
         {
-        	HAL_GPIO_WritePin(LIGHT_GPIO_Port, LIGHT_Pin, GPIO_PIN_RESET);
+//        	HAL_GPIO_WritePin(LIGHT_GPIO_Port, LIGHT_Pin, GPIO_PIN_RESET);
 
         }
         else // KM_HEADLIGHT_ON, KM_HEADLIGHT_LOW, KM_HEADLIGHT_HIGH
         {
-        	HAL_GPIO_WritePin(LIGHT_GPIO_Port, LIGHT_Pin, GPIO_PIN_SET);
+//        	HAL_GPIO_WritePin(LIGHT_GPIO_Port, LIGHT_Pin, GPIO_PIN_SET);
 
         }
 
@@ -2000,8 +2000,8 @@ void kingmeter_update(void)
     {
     	ui8_Push_Assist_flag=0;
     }
-    if( KM.Settings.Reverse)i8_direction = -1;
-    else i8_direction = 1;
+//    if( KM.Settings.Reverse)i8_direction = -1;
+//    else i8_direction = 1;
 //    MP.speedLimit=KM.Rx.SPEEDMAX_Limit;
 //    MP.battery_current_max = KM.Rx.CUR_Limit_mA;
 
