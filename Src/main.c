@@ -1978,7 +1978,7 @@ void kingmeter_update(void)
 
     /* Apply Rx parameters */
 
-//    MS.assist_level = KM.Rx.AssistLevel;
+    MS.assist_level = KM.Rx.AssistLevel;
 
     if(KM.Rx.Headlight == KM_HEADLIGHT_OFF)
         {
