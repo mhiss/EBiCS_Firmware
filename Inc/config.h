@@ -63,8 +63,8 @@
 
 //------------------------------ Ride mode setting
 #define NUMBER_OF_PAS_MAGNETS 12
-#define PAS_TIMEOUT 8000
-#define RAMP_END 1600
+#define PAS_TIMEOUT 4000   //8000
+#define RAMP_END 800   //1600
 //#define DIRDET
 #define FRAC_HIGH 30
 #define FRAC_LOW 15
