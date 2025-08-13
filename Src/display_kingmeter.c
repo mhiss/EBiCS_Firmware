@@ -409,10 +409,10 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			            		//HAL_UART_Transmit(&huart3, (uint8_t *)&KM_Message, Rx_message_length,50);
     			                // Decode Rx message
 
-    			                KM_ctx->Rx.AssistLevel        =  KM_Message[4];                 // 0..255
-    			                KM_ctx->Rx.Headlight          = (KM_Message[5] & 0xC0) >> 6;    // KM_HEADLIGHT_OFF / KM_HEADLIGHT_ON / KM_HEADLIGHT_LOW / KM_HEADLIGHT_HIGH
+//    			                KM_ctx->Rx.AssistLevel        =  KM_Message[4];                 // 0..255
+//    			                KM_ctx->Rx.Headlight          = (KM_Message[5] & 0xC0) >> 6;    // KM_HEADLIGHT_OFF / KM_HEADLIGHT_ON / KM_HEADLIGHT_LOW / KM_HEADLIGHT_HIGH
 //    			                KM_ctx->Rx.Battery            = (KM_Message[5] & 0x20) >> 5;    // KM_BATTERY_NORMAL / KM_BATTERY_LOW
-    			                KM_ctx->Rx.PushAssist         = (KM_Message[5] & 0x10) >> 4;    // KM_PUSHASSIST_OFF / KM_PUSHASSIST_ON
+//    			                KM_ctx->Rx.PushAssist         = (KM_Message[5] & 0x10) >> 4;    // KM_PUSHASSIST_OFF / KM_PUSHASSIST_ON
 //    			                KM_ctx->Rx.PowerAssist        = (KM_Message[5] & 0x08) >> 3;    // KM_POWERASSIST_OFF / KM_POWERASSIST_ON
 //    			                KM_ctx->Rx.Throttle           = (KM_Message[5] & 0x04) >> 2;    // KM_THROTTLE_OFF / KM_THROTTLE_ON
 //    			                KM_ctx->Rx.CruiseControl      = (KM_Message[5] & 0x02) >> 1;    // KM_CRUISE_OFF / KM_CRUISE_ON
@@ -427,7 +427,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
 
     			            	kingmeter_update();
     			                // Prepare Tx message
-    			                TxBuffer[0]  = 0X3A;                                      // StartCode
+    			                TxBuffer[0]  = 0x3A;                                      // StartCode
     			                TxBuffer[1]  = 0x1A;                                      // SrcAdd:  Controller
     			                TxBuffer[2]  = 0x52;                                      // CmdCode
     			                TxBuffer[3]  = 0x05;                                      // DataSize
@@ -481,7 +481,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			            		}
 
     			                // Prepare Tx message with handshake code
-    			                TxBuffer[0] = 0X3A;                                       // StartCode
+    			                TxBuffer[0] = 0x3A;                                       // StartCode
     			                TxBuffer[1] = 0x1A;                                       // SrcAdd:  Controller
     			                TxBuffer[2] = 0x53;                                      	// CmdCode
     			                TxBuffer[3] = 0x05;                                       // Number of Databytes
