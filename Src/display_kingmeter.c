@@ -425,7 +425,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
 
     			            	}
 
-//    			            	kingmeter_update();
+    			            	kingmeter_update();
     			                // Prepare Tx message
     			                TxBuffer[0]  = 0x3A;                                      // StartCode
     			                TxBuffer[1]  = 0x1A;                                      // SrcAdd:  Controller
@@ -471,7 +471,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			    	        KM_ctx->Rx.SPEEDMAX_Limit          		= KM_Message[11];
     			    	        KM_ctx->Rx.CUR_Limit_mA                 = (KM_Message[8]&0x3F)*500;
 
-//    			    	        kingmeter_update();
+    			    	        kingmeter_update();
 //    			    	        if(KM_ctx->Settings.ExecAutodetect&&!FirstRunFlag){
 //    			    	        	autodetect();
 //    			    	        	FirstRunFlag=1;
