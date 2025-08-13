@@ -100,7 +100,7 @@
 
 //----------------------------- Display setting
 
-#define DISPLAY_TYPE DISPLAY_TYPE_KINGMETER_618U   //DISPLAY_TYPE_KINGMETER_901U
+#define DISPLAY_TYPE DISPLAY_TYPE_KINGMETER_901U
 
 //------------------------------Autodetect setting
 #define AUTODETECT 0
