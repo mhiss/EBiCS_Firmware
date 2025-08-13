@@ -63,8 +63,8 @@
 
 //------------------------------ Ride mode setting
 #define NUMBER_OF_PAS_MAGNETS 12
-#define PAS_TIMEOUT 4000   //8000
-#define RAMP_END 800   //1600
+#define PAS_TIMEOUT 2500   //8000
+#define RAMP_END 1000   //1600
 //#define DIRDET
 #define FRAC_HIGH 30
 #define FRAC_LOW 15
@@ -84,7 +84,7 @@
 #define PULSES_PER_REVOLUTION 1
 #define REVERSE -1
 #define SPEEDFILTER 1
-#define SPEEDSOURCE INTERNAL
+#define SPEEDSOURCE EXTERNAL   //INTERNAL
 
 
 
