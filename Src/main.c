@@ -615,7 +615,7 @@ int main(void)
 	  //display message processing
 	  if(ui8_UART1_flag){
 #if (DISPLAY_TYPE & DISPLAY_TYPE_KINGMETER || DISPLAY_TYPE & DISPLAY_TYPE_DEBUG)
-//		  KingMeter_Service(&KM);
+		  KingMeter_Service(&KM);
 #endif
 
 
