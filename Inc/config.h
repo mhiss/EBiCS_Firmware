@@ -89,8 +89,8 @@
 
 
 //----------------------------- Power settings
-#define PH_CURRENT_MAX 900
-#define BATTERYCURRENT_MAX 15000
+#define PH_CURRENT_MAX 600
+#define BATTERYCURRENT_MAX 10000
 #define BATTERYCURRENT_OFFSET 924
 //#define ADC_BRAKE
 #define REGEN_CURRENT 0
