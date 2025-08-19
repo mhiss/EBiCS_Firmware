@@ -409,6 +409,38 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			            		//HAL_UART_Transmit(&huart3, (uint8_t *)&KM_Message, Rx_message_length,50);
     			                // Decode Rx message
 
+								//map new AssistLevel see table 
+								//								---------------------------------
+								//								| KM_Message(4)	|	New Value	|
+								//								---------------------------------
+								//								| 80			|	15			|
+								//								---------------------------------
+								//								| 123			|	32			|
+								//								---------------------------------
+								//								| 165			|	63			|
+								//								---------------------------------
+								//								| 207			|	127			|
+								//								---------------------------------
+								//								| 255			|	255			|
+								//								---------------------------------
+								//								
+
+								switch(KM_Message[4])
+									{
+										case 80:
+										KM_Message[4] = 15;
+										case 123:
+										KM_Message[4] = 32;
+										case 165:
+										KM_Message[4] = 63;
+										case 207:
+										KM_Message[4] = 127;
+										case 255:
+										KM_Message[4] = 255;
+										default: 
+										KM_Message[4] = 0;	
+									}
+											
     			                KM_ctx->Rx.AssistLevel        =  KM_Message[4];                 // 0..255
     			                KM_ctx->Rx.Headlight          = (KM_Message[5] & 0xC0) >> 6;    // KM_HEADLIGHT_OFF / KM_HEADLIGHT_ON / KM_HEADLIGHT_LOW / KM_HEADLIGHT_HIGH
     			                KM_ctx->Rx.Battery            = (KM_Message[5] & 0x20) >> 5;    // KM_BATTERY_NORMAL / KM_BATTERY_LOW
