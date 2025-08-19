@@ -428,17 +428,22 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
 								switch(KM_Message[4])
 									{
 										case 80:
-										KM_Message[4] = 15;
+											KM_Message[4] = 15;
+											break;
 										case 123:
-										KM_Message[4] = 32;
+											KM_Message[4] = 32;
+											break;
 										case 165:
-										KM_Message[4] = 63;
+											KM_Message[4] = 63;
+											break;
 										case 207:
-										KM_Message[4] = 127;
+											KM_Message[4] = 127;
+											break;
 										case 255:
-										KM_Message[4] = 255;
+											KM_Message[4] = 255;
+											break;
 										default: 
-										KM_Message[4] = 0;	
+											KM_Message[4] = 0;	
 									}
 											
     			                KM_ctx->Rx.AssistLevel        =  KM_Message[4];                 // 0..255
