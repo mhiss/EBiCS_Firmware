@@ -79,7 +79,7 @@
 
 //-------------------------------Speed settings
 #define WHEEL_CIRCUMFERENCE 2200
-#define GEAR_RATIO 44    //105 //dummy for testing
+#define GEAR_RATIO 150    //105 //dummy for testing
 #define SPEEDLIMIT 25
 #define PULSES_PER_REVOLUTION 1
 #define REVERSE -1
@@ -89,7 +89,7 @@
 
 
 //----------------------------- Power settings
-#define PH_CURRENT_MAX 600
+#define PH_CURRENT_MAX 1200
 #define BATTERYCURRENT_MAX 10000
 #define BATTERYCURRENT_OFFSET 924
 //#define ADC_BRAKE
