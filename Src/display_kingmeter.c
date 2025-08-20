@@ -363,7 +363,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
 	static uint8_t  m;
     static uint8_t  last_pointer_position;
     static uint8_t  recent_pointer_position;
-
+	uint8_t i;
 
     uint16_t CheckSum;
 
