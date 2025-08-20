@@ -578,7 +578,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
 
 							sprintf_(TxBuffer, "%d, %d, %d\r\n", GPIOA->IDR, GPIOB->IDR, GPIOC->IDR);
 							i=0;
-							while (TXbuffer[i] != '\0')
+							while (TxBuffer[i] != '\0')
 							{i++;}
 //							ui8_UART_TxCplt_flag=0;
 							HAL_UART_Transmit_DMA(&huart1, (uint8_t *)&TxBuffer, i);
