@@ -456,7 +456,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			                KM_ctx->Rx.CruiseControl      = (KM_Message[5] & 0x02) >> 1;    // KM_CRUISE_OFF / KM_CRUISE_ON
     			                KM_ctx->Rx.OverSpeed          = (KM_Message[5] & 0x01);         // KM_OVERSPEED_NO / KM_OVERSPEED_YES
 
-								printf_("PortA: : %d, PortB:  %d, PortC: %d \r\n", GPIOA->IDR, GPIOB->IDR, GPIOC->IDR);
+								printf_("PortD: : %d, PortB:  %d, PortC: %d \r\n", GPIOD->IDR, GPIOB->IDR, GPIOC->IDR);
 										
    			            		}
     			            	else {// printf_("Checksum fail! \n ");
@@ -577,14 +577,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			            HAL_UART_Transmit_DMA(&huart1, (uint8_t *)&TxBuffer, TxCnt+4);
     			            //HAL_UART_Transmit(&huart3, (uint8_t *)&TxBuffer, TxCnt+4,50);
     			            //printf_("%d, %d \n ",TxCnt+4,KM_Message[2]);
-
-							sprintf_(TxBuffer, "%d, %d, %d\r\n", GPIOA->IDR, GPIOB->IDR, GPIOC->IDR);
-							i=0;
-							while (TxBuffer[i] != '\0')
-							{i++;}
-//							ui8_UART_TxCplt_flag=0;
-							HAL_UART_Transmit_DMA(&huart1, (uint8_t *)&TxBuffer, i);
-							
+					
     			        }
 
 
