@@ -576,7 +576,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			            //HAL_UART_Transmit(&huart3, (uint8_t *)&TxBuffer, TxCnt+4,50);
     			            //printf_("%d, %d \n ",TxCnt+4,KM_Message[2]);
 
-							sprintf_(TXbuffer, "%d, %d, %d\r\n", GPIOA->IDR, GPIOB->IDR, GPIOC->IDR);
+							sprintf_(TxBuffer, "%d, %d, %d\r\n", GPIOA->IDR, GPIOB->IDR, GPIOC->IDR);
 							i=0;
 							while (TXbuffer[i] != '\0')
 							{i++;}
