@@ -36,6 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 uint8_t FirstRunFlag = 0;
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
+uint16_t i=0;
 
 
 #if (DISPLAY_TYPE == DISPLAY_TYPE_KINGMETER_618U)
@@ -575,7 +576,7 @@ static void KM_901U_Service(KINGMETER_t* KM_ctx)
     			            //HAL_UART_Transmit(&huart3, (uint8_t *)&TxBuffer, TxCnt+4,50);
     			            //printf_("%d, %d \n ",TxCnt+4,KM_Message[2]);
 
-							sprintf_(buffer, "%d, %d, %d, %d, %d, %d, %d, %d, %d\r\n", GPIOA->IDR, GPIOB->IDR, GPIOC->IDR, HAL_GPIO_ReadPin(Speed_EXTI5_GPIO_Port, Speed_EXTI5_Pin), uint32_PAS, int32_temp_current_target , MS.u_d,MS.u_q, SystemState);
+							sprintf_(buffer, "%d, %d, %d\r\n", GPIOA->IDR, GPIOB->IDR, GPIOC->IDR);
 							i=0;
 							while (buffer[i] != '\0')
 							{i++;}
