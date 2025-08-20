@@ -37,6 +37,7 @@ uint8_t FirstRunFlag = 0;
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
 uint16_t i=0;
+char buffer[100];
 
 
 #if (DISPLAY_TYPE == DISPLAY_TYPE_KINGMETER_618U)
