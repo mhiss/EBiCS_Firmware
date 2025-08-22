@@ -79,7 +79,7 @@
 
 //-------------------------------Speed settings
 #define WHEEL_CIRCUMFERENCE 2200
-#define GEAR_RATIO 150    //105 //dummy for testing
+#define GEAR_RATIO 88    //105 //dummy for testing
 #define SPEEDLIMIT 25
 #define PULSES_PER_REVOLUTION 1
 #define REVERSE -1
