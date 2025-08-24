@@ -1950,6 +1950,7 @@ void kingmeter_update(void)
 #if (SPEEDSOURCE  == EXTERNAL)
     	//KM.Tx.Wheeltime_ms = ((MS.Speed>>3)*PULSES_PER_REVOLUTION); //>>3 because of 8 kHz counter frequency, so 8 tics per ms
     	KM.Tx.Wheeltime_ms = hubdata.HS_Wheeltime<<1;
+        KM.Tx.Wheeltime_ms = WHEEL_CIRCUMFERENCE*216/(MS.Speed*PULSES_PER_REVOLUTION); // Geschwindigkeit ist Weg pro Zeit Radumfang durch Dauer einer Radumdrehung --> Umfang * 8000*3600/(n*1000000) * Skalierung Bafang Display 200/26,6
 
     #else
         if(__HAL_TIM_GET_COUNTER(&htim2) < 12000)
