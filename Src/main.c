@@ -1520,7 +1520,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  GPIO_InitStruct.Pin = Hall_A_Pin;
+  GPIO_InitStruct.Pin = Hall_A_Pin|GPIO_PIN_1|GPIO_PIN_12;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Hall_A_GPIO_Port, &GPIO_InitStruct);
@@ -1542,7 +1542,7 @@ static void MX_GPIO_Init(void)
 //  HAL_GPIO_Init(BRAKE_LIGHT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : S1_S2_Brake_Pin */
-  GPIO_InitStruct.Pin = S1_S2_Brake_Pin;
+  GPIO_InitStruct.Pin = S1_S2_Brake_Pin|GPIO_PIN_13|GPIO_PIN_14;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(S1_S2_Brake_GPIO_Port, &GPIO_InitStruct);
@@ -1557,7 +1557,7 @@ static void MX_GPIO_Init(void)
 
 
   /*Configure GPIO pins : B_Speed_Pin _1_1_PAS_Pin */
-  GPIO_InitStruct.Pin = B_Speed_Pin|_1_1_PAS_Pin;
+  GPIO_InitStruct.Pin = B_Speed_Pin|_1_1_PAS_Pin|Temperature_Pin|GPIO_PIN_2|GPIO_PIN_11;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
