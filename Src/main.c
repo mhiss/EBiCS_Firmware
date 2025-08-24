@@ -1557,7 +1557,7 @@ static void MX_GPIO_Init(void)
 
 
   /*Configure GPIO pins : B_Speed_Pin _1_1_PAS_Pin */
-  GPIO_InitStruct.Pin = B_Speed_Pin|_1_1_PAS_Pin|Temperature_Pin|GPIO_PIN_2|GPIO_PIN_11;
+  GPIO_InitStruct.Pin = B_Speed_Pin|_1_1_PAS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
